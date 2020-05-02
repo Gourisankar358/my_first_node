@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+  <body>
+    <div class="container">
+    <h1><%= title %></h1>
+    
+    <form method="post" action="/update/">
+        <div class="form-row">
+  
+          <div class="form-group col-md-6">
+              <input type="hidden" name="id" value="<%= records._id%>">
+            <label for="inputPassword4">Name</label>
+            <input type="text" class="form-control" id="uname" name="uname" value="<%= records.name %>" placeholder="Enter name">
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%= records.email %>" placeholder="Email">
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Emp Type</label>
+          <input type="text" class="form-control" id="emptype" name="emptype" value="<%= records.etype %>" placeholder="emptype">
+        </div>
+  
+        <div class="form-group">
+          <label for="inputAddress2">	Houtly Rate </label>
+          <input type="number" class="form-control" id="hrlyrate" name="hrlyrate" value="<%= records.hourlyrate %>" placeholder="Houtly Rate">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputCity">Total Hours</label>
+
+            <input type="number" class="form-control" id="ttlhr" name="ttlhr" placeholder="Total Hours" value="<%= records.totalHour %>">
+          </div>
+        </div> 
+        <button type="submit" class="btn btn-primary">submit</button>
+      </form>
+    </div>
+    </body>
+    </html>

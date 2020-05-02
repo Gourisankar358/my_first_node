@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+  <body>
+    <div class="container">
+    <h1><%= title %></h1>
+
+    <br>
+    <% if(success!="") { %>
+        <div class="alert alert-success">
+          <strong><%= success %></strong>  
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+      
+        </div>
+    <% } %> 
+    
+
+    <form method="post" action="/upload/" enctype="multipart/form-data">
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">upload file</label>
+          <input type="file" class="form-control" id="ff" name="ff" placeholder="upload file" required>
+        </div> 
+    </div>
+    <br>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+
+
+    <% if (records.length>0){ %>
+      <% records.forEach(function(row){ %>
+
+        
+      
+  <img src="./uploads/<%= row.imagename %>" width="100px">
+
+        <% }) } %>
+  </div>
+  </body>
+</html>
